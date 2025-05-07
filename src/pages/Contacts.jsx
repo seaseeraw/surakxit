@@ -1,60 +1,91 @@
 import React, { useState } from 'react';
-import { Form, Button, Row, Col, Container, Card } from 'react-bootstrap';
+import { Form, Button, Container } from 'react-bootstrap';
 
-function Contacts() {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+function ContactForm() {
+  const [formData, setFormData] = useState({
+    email: "",
+    password: "",
+    phonenumber: "",
+    Date: ""
+  });
 
-  const handleSubmit = (e) => {
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Email:', email);
-    console.log('Password:', password);
+
+    const response = await fetch("http://localhost/submit.php", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    });
+
+    const result = await response.text();
+    alert(result);
   };
 
   return (
-    <Container className="d-flex justify-content-center align-items-center" style={{ minHeight: '100vh' }}>
-      <Card className="p-4 shadow" style={{ width: '100%', maxWidth: '500px' }}>
-        <Card.Body>
-          <h3 className="text-center mb-4">Contact Form</h3>
-          <Form onSubmit={handleSubmit}>
-            <Row className="mb-3">
-              <Col>
-                <Form.Group controlId="formGridEmail">
-                  <Form.Label>Email</Form.Label>
-                  <Form.Control
-                    type="email"
-                    placeholder="Enter email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    className="shadow-sm"
-                  />
-                </Form.Group>
-              </Col>
-            </Row>
+    <Container className="mt-5">
+      <h2>Contact Form</h2>
+      <Form onSubmit={handleSubmit}>
+        <Form.Group className="mb-3" controlId="formEmail">
+          <Form.Label>Email</Form.Label>
+          <Form.Control
+            type="email"
+            name="email"
+            placeholder="Enter email"
+            value={formData.email}
+            onChange={handleChange}
+            required
+          />
+        </Form.Group>
 
-            <Row className="mb-4">
-              <Col>
-                <Form.Group controlId="formGridPassword">
-                  <Form.Label>Password</Form.Label>
-                  <Form.Control
-                    type="password"
-                    placeholder="Password"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                    className="shadow-sm"
-                  />
-                </Form.Group>
-              </Col>
-            </Row>
+        <Form.Group className="mb-3" controlId="formPassword">
+          <Form.Label>Password</Form.Label>
+          <Form.Control
+            type="password"
+            name="password"
+            placeholder="Enter password"
+            value={formData.password}
+            onChange={handleChange}
+            required
+          />
+        </Form.Group>
 
-            <Button variant="primary" type="submit" className="w-100">
-              Submit
-            </Button>
-          </Form>
-        </Card.Body>
-      </Card>
+        <Form.Group className="mb-3" controlId="formPhone">
+          <Form.Label>Phone Number</Form.Label>
+          <Form.Control
+            type="text"
+            name="phonenumber"
+            placeholder="Enter phone number"
+            value={formData.phonenumber}
+            onChange={handleChange}
+            required
+          />
+        </Form.Group>
+
+        <Form.Group className="mb-3" controlId="formDate">
+          <Form.Label>Date</Form.Label>
+          <Form.Control
+            type="date"
+            name="Date"
+            value={formData.Date}
+            onChange={handleChange}
+            required
+          />
+        </Form.Group>
+
+        <Button variant="primary" type="submit">
+          Submit
+        </Button>
+      </Form>
     </Container>
   );
 }
 
-export default Contacts;
+export default ContactForm;
+

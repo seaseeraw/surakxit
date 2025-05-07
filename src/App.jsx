@@ -42,7 +42,7 @@ import Navbars from './components/Navbar';
 import Homes from './pages/Home';
 import Abouts from './pages/About';
 import Career from './pages/Careers';
-import Contacts from './pages/Contacts';
+import ContactForm from './pages/Contacts';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
@@ -66,7 +66,7 @@ function App() {
           <Route path="/" element={<Homes darkMode={darkMode} />} />
           <Route path="/about" element={<Abouts darkMode={darkMode} />} />
           <Route path="/carrer" element={<Career darkMode={darkMode} />} />
-          <Route path="/contacts" element={<Contacts darkMode={darkMode} />} />
+          <Route path="/contacts" element={<ContactForm darkMode={darkMode} />} />
           <Route path="*" element={<h2 className="text-center mt-5">404: Page Not Found</h2>} />
         </Routes>
       </div>
