@@ -1,33 +1,4 @@
-// // Navbars.js
-// import React from 'react';
-// import { Container, Button, Nav, Navbar } from 'react-bootstrap';
-// import { BsSunFill, BsMoonFill } from 'react-icons/bs';
-// const Navbars = ({ darkMode, toggleTheme }) => {
-//   return (
-//     <Navbar bg={darkMode ? 'dark' : 'success'} variant={darkMode ? 'dark' : 'light'}>
-//       <Container>
-//         <Navbar.Brand href="#home"> <img
-//             src="./src/assets/a.png" // Your logo file path (adjust if necessary)
-//             width="40" // Adjust the size
-//             height="40"
-//             className="d-inline-block align-top"
-//             alt="Company Logo"
-//           /></Navbar.Brand>
-//         <Nav className="me-auto">
-//           <Nav.Link href="#home">Home</Nav.Link>
-//           <Nav.Link href="#about">About Us</Nav.Link>
-//           <Nav.Link href="#careers">Careers</Nav.Link>
-//           <Nav.Link href="#contacts">Contacts</Nav.Link>
-//         </Nav>
-//         <Button variant={darkMode ? 'light' : 'dark'} onClick={toggleTheme}>
-//   {darkMode ? <BsSunFill /> : <BsMoonFill />}
-// </Button>
-//       </Container>
-//     </Navbar>
-//   );
-// };
 
-// export default Navbars;
 
 
 import React from 'react';
