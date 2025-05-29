@@ -1,4 +1,4 @@
-/* src/pages/Home.css */
+
 .home-container {
   min-height: 100vh;
   padding: 60px 30px;
@@ -170,3 +170,94 @@
 }
 
 
+/* src/pages/About.css */
+.about-container {
+  padding: 80px 20px;
+  max-width: 1200px;
+  margin: auto;
+  text-align: center;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to bottom right, #f5f7ff, #ffffff);
+}
+
+.about-title {
+  font-size: 48px;
+  font-weight: 800;
+  background: linear-gradient(to right, #007bff, #6610f2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 20px;
+  animation: fadeInDown 0.6s ease-in-out;
+}
+
+.about-description {
+  font-size: 18px;
+  color: #555;
+  max-width: 700px;
+  margin: 0 auto 50px;
+  line-height: 1.7;
+}
+
+.about-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+.about-card {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  border-radius: 20px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+  padding: 30px 20px;
+  width: 300px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: default;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.about-card:hover {
+  transform: translateY(-5px) scale(1.03);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.15);
+}
+
+.about-card h3 {
+  font-size: 22px;
+  margin-bottom: 10px;
+  color: #0056b3;
+}
+
+.about-card p {
+  font-size: 16px;
+  color: #333;
+}
+
+.about-icon {
+  font-size: 36px;
+  margin-bottom: 15px;
+  animation: bounceIn 0.5s ease;
+}
+
+/* Subtle animations */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounceIn {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}

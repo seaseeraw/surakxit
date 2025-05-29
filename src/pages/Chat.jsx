@@ -14,7 +14,7 @@ const theme = {
 };
 
 const steps = [
-  { id: '1', message: 'Hello! How can I help you today?', trigger: '2' },
+  { id: '1', message: "नमस्ते! म तपाईंलाई आज कसरी सहयोग गर्न सक्छु?", trigger: '2' },
   {
     id: '2',
     options: [
@@ -24,7 +24,7 @@ const steps = [
   },
   {
     id: '3',
-    message: 'We offer web development, design, and IT support.',
+    message: 'We offer reliable and customer-focused banking services, including everyday banking, loans, and financial solutions to help you manage and grow your money with confidence.',
     end: true,
   },
   {
