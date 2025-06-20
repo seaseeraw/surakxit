@@ -1,18 +1,7 @@
-// import React from 'react'
 
-// const Abouts = () => {
-//   return (
-//     <div>This is about page</div>
-//   )
-// }
-
-// export default Abouts;
-
-// src/pages/About.jsx
-// src/pages/About.jsx
 import React from 'react';
 import { motion } from 'framer-motion';
-import './About.css';
+
 
 const Abouts = () => {
   return (

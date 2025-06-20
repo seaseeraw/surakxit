@@ -23,7 +23,7 @@ const Navbars = ({ darkMode, toggleTheme }) => {
         <Nav className="me-auto">
           <Nav.Link as={Link} to="/home">Home</Nav.Link>
           <Nav.Link as={Link} to="/about">About Us</Nav.Link>
-          <Nav.Link as={Link} to="/careers">Careers</Nav.Link>
+          <Nav.Link as={Link} to="/career">Careers</Nav.Link>
           <Nav.Link as={Link} to="/contacts">Contacts</Nav.Link>
         </Nav>
         <Button variant={darkMode ? 'light' : 'dark'} onClick={toggleTheme}>

@@ -30,7 +30,7 @@ function App() {
           <Route path="/" element={<Homes darkMode={darkMode} />} />
           <Route path="/home" element={<Homes darkMode={darkMode} />} />
           <Route path="/about" element={<Abouts darkMode={darkMode} />} />
-          <Route path="/carrer" element={<Career darkMode={darkMode} />} />
+          <Route path="/career" element={<Career darkMode={darkMode} />} />
           <Route path="/contacts" element={<ContactForm darkMode={darkMode} />} />
           <Route path="*" element={<h2 className="text-center mt-5">404: Page Not Found</h2>} />
         </Routes>
